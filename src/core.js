@@ -210,16 +210,4 @@ var MyPromise = (function () {
   return MyPromise;
 })();
 
-
-// 执行promises-aplus-tests测试, 请先执行npm i -g promises-aplus-tests
-MyPromise.deferred = function() {
-  let defer = {};
-  defer.promise = new MyPromise((resolve, reject) => {
-    defer.resolve = resolve;
-    defer.reject = reject;
-  });
-  return defer;
-}
-try {
-  module.exports = MyPromise
-} catch (e) {}
+module.exports = MyPromise;
